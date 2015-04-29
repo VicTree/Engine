@@ -29,7 +29,7 @@ public class MenuState extends GameState {
 		
 		try{
 			background = new Background("/Backgrounds/testBackgroung.png", 1);
-			background.setSpeed(-.1, 0.0);
+			background.setSpeed((-.1 * GamePanel.Width)/320, 0.0);
 			
 			titleColor = (Color.MAGENTA);
 			titleFont = new Font("Roboto", Font.PLAIN, GamePanel.Width/10);

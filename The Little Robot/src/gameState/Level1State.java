@@ -23,7 +23,8 @@ public class Level1State extends GameState{
 		tileMap.loadMap("/Maps/level1-1.map");
 		tileMap.setPosition(0,0);
 		
-		background = new Background("/Backgrounds/grassbg1.gif", .1);
+		background = new Background("/Backgrounds/grassbg1.gif", -.1);
+		background.setSpeed((-.1 * GamePanel.Width)/320, 0.0);
 	}
 	public void update(){}
 	public void draw(Graphics2D g){
