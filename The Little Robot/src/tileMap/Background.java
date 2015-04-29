@@ -47,26 +47,27 @@ public class Background {
 	}
 	
 	public void draw(Graphics2D g){
+		//g.drawImage(image.getScaledInstance(GamePanel.Width, GamePanel.Height, Image.SCALE_SMOOTH), (int)x, (int) y, null);
+
 		g.drawImage(resize(image, GamePanel.Width, GamePanel.Height), (int)x, (int) y, null);
 		if(x<0){
 			g.drawImage(resize(image, GamePanel.Width, GamePanel.Height),(int)x + GamePanel.Width, (int)y, null);
-			
+			//g.drawImage(image.getScaledInstance(GamePanel.Width, GamePanel.Height, Image.SCALE_SMOOTH),(int)x + GamePanel.Width, (int)y, null);
+
 		}
 		if(x>0){
 			g.drawImage(resize(image, GamePanel.Width, GamePanel.Height),(int)x - GamePanel.Width, (int)y, null);
-			
+			//g.drawImage(image.getScaledInstance(GamePanel.Width, GamePanel.Height, Image.SCALE_SMOOTH),(int)x - GamePanel.Width, (int)y, null);
+
 		}
 	}
 	
 	private BufferedImage resize(BufferedImage img, int newW, int newH) { 
-	    Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
-	    BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
-
-	    Graphics2D g2d = dimg.createGraphics();
-	    g2d.drawImage(tmp, 0, 0, null);
-	    g2d.dispose();
-
-	    return dimg;
+		BufferedImage resizedImage = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB); 
+		Graphics2D g = resizedImage.createGraphics();
+		g.drawImage(image, 0, 0, newW, newH, null);
+		g.dispose();
+		return resizedImage;
 	}  
 	
 }
