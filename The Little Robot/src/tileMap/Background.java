@@ -49,25 +49,25 @@ public class Background {
 	public void draw(Graphics2D g){
 		//g.drawImage(image.getScaledInstance(GamePanel.Width, GamePanel.Height, Image.SCALE_SMOOTH), (int)x, (int) y, null);
 
-		g.drawImage(resize(image, GamePanel.Width, GamePanel.Height), (int)x, (int) y, null);
+		g.drawImage(image, (int)x, (int) y, GamePanel.Width, GamePanel.Height,  null);
 		if(x<0){
-			g.drawImage(resize(image, GamePanel.Width, GamePanel.Height),(int)x + GamePanel.Width, (int)y, null);
+			g.drawImage(image,(int)x + GamePanel.Width, (int)y, GamePanel.Width, GamePanel.Height, null);
 			//g.drawImage(image.getScaledInstance(GamePanel.Width, GamePanel.Height, Image.SCALE_SMOOTH),(int)x + GamePanel.Width, (int)y, null);
 
 		}
 		if(x>0){
-			g.drawImage(resize(image, GamePanel.Width, GamePanel.Height),(int)x - GamePanel.Width, (int)y, null);
+			g.drawImage(image, (int)x - GamePanel.Width, (int)y, GamePanel.Width, GamePanel.Height, null);
 			//g.drawImage(image.getScaledInstance(GamePanel.Width, GamePanel.Height, Image.SCALE_SMOOTH),(int)x - GamePanel.Width, (int)y, null);
 
 		}
 	}
 	
-	private BufferedImage resize(BufferedImage img, int newW, int newH) { 
-		BufferedImage resizedImage = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB); 
-		Graphics2D g = resizedImage.createGraphics();
-		g.drawImage(image, 0, 0, newW, newH, null);
-		g.dispose();
-		return resizedImage;
-	}  
+//	private BufferedImage resize(BufferedImage img, int newW, int newH) { 
+//		BufferedImage resizedImage = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB); 
+//		Graphics2D g = resizedImage.createGraphics();
+//		g.drawImage(image, 0, 0, newW, newH, null);
+//		g.dispose();
+//		return resizedImage;
+//	}  
 	
 }

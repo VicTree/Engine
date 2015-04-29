@@ -162,7 +162,7 @@ public class TileMap {
 				int r = rc/numberOfTilesAcross;
 				int c = rc % numberOfTilesAcross;
 				
-				g.drawImage(tiles[r][c].getImage(), (int)x + col * (tileSize * GamePanel.Width)/320, (int)y + row * (tileSize* GamePanel.Height)/240, null); //remove *GamePanel.Height)/240 and such
+				g.drawImage(tiles[r][c].getImage(), (int)x + col * (tileSize * GamePanel.Width)/320, (int)y + row * (tileSize* GamePanel.Height)/240,(tileSize * GamePanel.Width)/320,(tileSize* GamePanel.Height)/240, null); //remove *GamePanel.Height)/240 and such
 				
 			}
 		}
